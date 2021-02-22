@@ -8,6 +8,9 @@ namespace drinksApp.Drinks.Implementations
         private readonly Func<string> _inputProvider;
         private readonly Action<string> _outputProvider;
 
+        public string DrinkName => nameof(Beer);
+        public bool LoadClassFromAssembly => true;
+
         public Beer(Func<string> inputProvider, Action<string> outputProvider)
         {
             _inputProvider = inputProvider;
@@ -29,7 +32,7 @@ namespace drinksApp.Drinks.Implementations
                 return;
             }
 
-            _outputProvider("There you go! A cold beer.");
+            _outputProvider($"There you go! A cold {DrinkName}.");
         }
     }
 }

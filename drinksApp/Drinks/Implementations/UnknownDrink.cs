@@ -7,6 +7,9 @@ namespace drinksApp.Drinks.Implementations
         private readonly Func<string> _inputProvider;
         private readonly Action<string> _outputProvider;
 
+        public string DrinkName => nameof(UnknownDrink);
+        public bool LoadClassFromAssembly => false;
+
         public UnknownDrink(Func<string> inputProvider, Action<string> outputProvider)
         {
             _inputProvider = inputProvider;
